@@ -1,0 +1,1548 @@
+body
+{
+    margin: 0; /*величина внешних отступов*/
+    font-family: 'Montserrat', sans-serif; /*добавление шрифта с google fonts*/
+    font-size: 15px; /*размер шрифта*/
+    line-height: 1.6; /*межстрочный отступ*/
+    color: #333; /*цвет шрифта*/
+
+}
+
+*,
+*:before,
+*:after
+{ /*для всех элементов страницы и для псевдоэлементов before и after*/
+    box-sizing: border-box; /*установка для браузера определяет как вычисляется общая ширина и высота элемента.*/
+}
+h1,h2,h3,h4,h5
+{
+    margin:0 auto;
+}
+hr{
+    display: block;
+    width:100%;
+    border:0;
+    height:1px;
+    margin:50px 0;
+    background-color: #e5e5e5;
+}
+/*Container*/
+.container
+{
+width:100%;
+height: 100%; /*ширина 100%*/
+max-width:1200px; /*максимальная ширина блока - 1200 пк.*/
+margin:0 auto; /*убираем отсупы.*/
+padding: 0 15px;
+}
+/*header*/
+.header
+{
+    width: 100%;
+    position :absolute;
+    /*Абсолютное позиционирование делает две вещи:
+    Элемент исчезает с того места, где он должен быть и позиционируется заново. Остальные элементы, располагаются так, как будто этого элемента никогда не было.
+    Координаты top/bottom/left/right для нового местоположения отсчитываются от ближайшего позиционированного родителя, т.е. родителя с позиционированием, отличным от static. Если такого родителя нет – то относительно документа.
+    */
+    top: 0;
+    left:0;
+    right:0;
+    z-index: 1; /*определяет положение позиционированного элемента и его дочерних элементов или флекс-элементов по оси z. Перекрывающие элементы с большим значением z-index будут накладываться поверх элементов с меньшим z-index.*/
+}
+
+.header_inner
+{
+    display: flex; /*флексбокс- выстраивание элементов внутри какого-то крупного блока по прямой оси.*/
+    justify-content: space-between; /*определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера.
+    space-between - Равномерно распределяет все элементы по ширине flex-блока. Первый элемент вначале, последний в конце*/
+    align-items:center; /*выравнивание элементов по горизонатли по центру*/
+}
+.header_logo
+{
+        font-size:30px;
+        font-weight: 700;
+        color:#ffffff;
+        cursor: pointer;
+}
+.header.fixed
+{
+    background-color: #f38181 ;
+    position: fixed;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    top:0;
+    left:0;
+    right:0;
+    transform: translate3d(0,0,0);
+}
+
+.header.active{
+   background-color: #f38181 ;
+}
+/*Nav*/
+.nav
+{
+ font-size: 14px;
+ text-transform: uppercase; /*Буквы будут преобразовываться в большие*/
+}
+
+.nav_link
+{
+    display:inline-block;
+    vertical-align:top; /*подразумевает, что его содержимое поднимется к его же верхней границе.*/
+    margin: 0 20px;
+    position: relative; /*Относительное позиционирование сдвигает элемент относительно его обычного положения.*/
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s linear; /*плавное изменение подстветки*/
+}
+.nav_link:after
+{
+    content: "";
+    display:block;
+    width:100%;
+    height:3px;
+    opacity: 0;
+    background-color:#fce38a;
+
+    position: absolute;
+    top:100%;
+    left:0;
+    z-index:1;
+    transition: opacity 0.2 linear;
+}
+.nav_link:hover{
+    color: #fce38a;
+
+}
+.nav_link:hover:after,
+.nav_link.active:after
+{
+    opacity: 1;
+}
+.nav_toggle
+{
+
+    display: none;
+    padding: 15px 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+.toggle_btn
+{
+    width: 40px;
+    height: 40px;
+}
+.nav-toggle_item
+{
+    display: block;
+    width: 30px;
+    height: 3px;
+
+    background-color: #fff;
+
+    transition: background .2s linear;
+
+    color: transparent;
+    font-size: 0;
+
+    position: relative;
+}
+.nav-toggle_item:before,
+.nav-toggle_item:after
+{
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    background-color: #fff;
+
+    transition: transform .2s linear;
+
+    position: absolute;
+    left: 0;
+    z-index:1;
+}
+.nav-toggle_item:before
+{
+    top:-8px;
+}
+.nav-toggle_item:after
+{
+    top:8px;
+}
+
+.nav_toggle.active .nav-toggle_item
+{
+background: none;
+
+}
+.nav_toggle.active  .nav-toggle_item::before{
+    transform-origin: left top;
+    transform: rotate(45deg) translateX(-2px);
+}
+.nav_toggle.active  .nav-toggle_item::after{
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translateX(-3px);;
+}
+/*intro*/
+.intro
+{
+    padding-top: 120px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 820px;
+    position: relative;
+    background: url("images/intro/intro1_01.jpg") center
+    no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover; /*фоновое изображение масштабируется так, чтобы полностью заполнить пространство элемента, при этом сохраняя свои пропорции*/
+}
+.intro_inner
+{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.intro_suptitle
+{
+    margin: 40px;
+    font-size: 72px;
+    font-weight: 400;
+    font-family: 'Kaushan Script', cursive;
+    color:#fff;
+}
+.intro_title
+{
+    font-size:150px;
+    font-weight: 700;
+    color:#fff;
+    text-transform: uppercase;
+    line-height: 1; /*Расстояние между строками*/
+
+}
+.intro_title:after{
+    content:"";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #fff;
+    margin: 60px auto ;
+}
+/*button*/
+.link_button
+{
+    display: inline-block;
+    vertical-align: top;
+    border: 3px solid #fff;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    width: 160px;
+    height: 40px;
+    color:#fff;
+    padding-top: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    transition: background .2s linear,
+    color .2s linear;
+}
+.link_button:hover
+    {
+        background-color: #fce38a;
+        color:#333;
+    }
+/*slider*/
+.intro_slider
+{
+display: flex;
+justify-content: space-between;
+margin-top: 15%;
+}
+.slider_item
+{
+    height: 100%;
+    width: 24%;
+    padding: 10px 0 ;
+    border-top: 3px solid #fff;
+    font-size: 18px;
+    color:#fff;
+    text-transform: uppercase;
+    opacity: .7; /*прозрачность*/
+    position: relative;
+}
+.slider_number
+{
+    font-weight: 700;
+    font-size: 24px;
+}
+.slider_item.active
+{
+    opacity: 1;
+
+}
+.slider_item.active:before
+{
+    content:"";
+    display:block;
+    width: 70px;
+    height:3px;
+    position: absolute;
+    top:-3px;
+    left:0;
+    z-index:1;
+    background-color:#f38181;
+}
+/*section*/
+
+.section
+{
+padding: 120px 0;
+}
+.section--gray
+{
+    background-color: #f8f8f8;
+}
+.section--rewiews
+{
+    padding: 0;
+    margin-bottom: 120px;
+}
+.section--devices
+{
+    margin-bottom: 60px;
+    background: url("images/DevicesBG.jpg")
+    center no-repeat;
+    background-size: cover;
+    padding-bottom: 0;
+}
+.section_header
+{
+    width:100%;
+    max-width:950px;
+    text-align: center;
+    margin:0 auto 50px;
+}
+.secton_suptitle
+{
+    font-family:'Kaushan Script', cursive ;
+    font-size:24px;
+    margin-bottom: 15px;
+}
+.section_title
+{
+    font-size:30px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.section_title::after
+{
+    content:"";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #f38181;
+    margin: 40px auto ;
+}
+.section_text
+{
+    font-family: 'Roboto', sans-serif;
+    font-size:15px ;
+    color:#999;
+}
+/*About*/
+.about
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.about_item
+{
+
+    background-color: #95e1d3;
+    width: 380px;
+    height: auto;
+    position: relative;
+}
+.about_img
+{
+ background: linear-gradient(to bottom,#fce38a,#f38181) ;
+ transition: transform  .1s linear;
+}
+.about_item:hover .about_img
+{
+    transform: translate3d(-10px,-10px, 0px) ; /*сдвиг,плавнее,
+    чем left/top/,указываются напрвление по осям.*/
+}
+
+.about_item:hover .about_img img
+{
+ opacity: .1;
+
+}
+.about_item:hover .about_txt
+{
+    opacity: 1;
+}
+.about_img img
+{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: opacity .1s linear;
+}
+.about_txt
+{
+    width:100%;
+    color:#fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left:0;
+    z-index:auto;
+    transform: translate(0,50,0);
+    opacity: 0;
+    transition: opacity 0.1s linear;
+}
+
+/*statistics*/
+.statistics
+{
+ background-color:#95e1d3 ;
+}
+ .stat
+ {
+display:flex;
+flex-wrap: wrap;
+ }
+ .stat_item
+ {
+    text-align: center;
+    text-transform: uppercase;
+    flex: 1 1 0; /*Все колонки одинаковой ширины*/
+    border-left:  1px solid #b5eae0;
+    color:#fff;
+    padding: 70px 25px;
+ }
+ .stat_item:last-child{ /*Для последнего дочернего элемента*/
+    border-right: 1px solid #b5eae0;
+ }
+ .stat_count
+ {
+   font-size: 72px;
+   font-weight: 700;
+ }
+ .stat_project
+ {
+    font-size: 14px;
+    font-weight: 400px;
+
+ }
+ /*Services*/
+
+ .services
+ {
+    display:flex;
+    flex-wrap: wrap;
+ }
+ .services_item
+ {
+    width: 33.33333%;
+    padding-left:85px;
+    position:relative;
+    padding-right: 35px;
+    margin-bottom: 40px;
+ }
+ .services_item--border
+ {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5e5e5;
+ }
+.services_icon
+{
+ position:absolute;
+ top:0;
+ left:28px;
+ z-index:auto;
+}
+.services_title
+{
+    margin-bottom: 10px;
+    text-transform:uppercase;
+    font-size:14px;
+    color:#333;
+}
+.services_text
+{
+    font-size:15px;
+    color:#999;
+    font-family: 'Roboto', sans-serif;
+}
+/*devices*/
+.devices
+{
+    width:100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+.devices_item
+{
+    display:block;
+    max-width: 100%;
+    height: auto;
+}
+.devices_item--iphone
+{
+    position: absolute;
+    bottom: -60px;
+    right:0;
+    z-index:auto;
+}
+/*Wedo*/
+.wedo
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+}
+.wedo_img
+{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.wedo_item
+{
+    padding: 0 15px;
+    width:50%; /*или flex:1 1 0;*/
+}
+/*Accordion*/
+.accordion_header
+{
+    position: relative;
+    padding: 15px 20px 15px 60px;
+    cursor: pointer;
+}
+.accordion_header:after{
+    content:  "";
+    display: block;
+    width:16px;
+    height:16px;
+    border-top: 2px solid #CCC;
+    border-right: 2px solid #CCC;
+    position: absolute;
+    top:30%;
+    right:5px;
+    z-index:auto;
+    transform: translate(-50%)
+    rotate(135deg);
+}
+.accordion_icon
+{
+    position: absolute;
+    right:2px;
+    left:15px;
+    bottom: 5px;
+    z-index:auto;
+}
+.accordion_title
+{
+    text-transform: uppercase;
+    font-size:14px;
+    color:#333;
+}
+.accordion_item
+{
+    border:1px solid #CCC;
+    margin-bottom: 20px;
+}
+.accordion_item--last{
+    margin-bottom: 0;
+}
+.accordion_item.active
+.accordion_content{
+    display: block;
+}
+
+.accordion_header.active
+{
+    border-bottom: 1px solid #CCC;
+}
+.accordion_item.active
+.accordion_header:after
+{
+    content:  "";
+    display: block;
+    width:16px;
+    height:16px;
+    border-top: 2px solid #CCC;
+    border-right: 2px solid #CCC;
+    position: absolute;
+    top:40%;
+    right:5px;
+    z-index:1;
+    transform: translate(-50%)
+    rotate(-45deg);
+}
+
+.accordion_content
+{
+    position: relative;
+    display: none;
+    padding: 15px 30px;
+    font-size:15px;
+    color:#999;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Reviews */
+
+.rewiews
+{
+    position:relative;
+}
+.rewiews .slick-slider
+{
+    padding: 0 150px;
+}
+.slick-track
+{
+    min-height: 150px;
+}
+.reviews_text
+{
+position: relative;
+font-size: 24px;
+margin-bottom: 1%;
+font-style: italic;
+font-family:'Roboto', sans-serif;
+color:#999;
+}
+.reviews_author:before{
+    position: absolute;
+    bottom:10px;
+    left: -60px;
+    z-index:1;
+    content:"";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #f38181;
+}
+.rewiews_item
+{
+    min-height: 210px;
+    padding-left:205px;
+    position:relative;
+}
+.reviews_photo
+{
+    position: absolute;
+    width: 150px;
+    top:0;
+    left:0px;
+    z-index:1;
+}
+.reviews_author
+{
+    position:relative;
+    font-size: 24px;
+    font-family:'Kaushan Script', cursive ;
+    margin-left: 60px;
+}
+.slick-arrow
+{
+    display: block;
+    font-size: 0;
+    color:transparent;
+    position: absolute;
+    top:50%;
+    background: none;
+    z-index: auto;
+    border: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.slick-arrow:focus
+{
+    outline:0;
+}
+.slick-arrow:after{
+    content:  "";
+    display: block;
+    width:16px;
+    height:16px;
+    border-top: 2px solid #CCC;
+    border-left: 2px solid #CCC;
+}
+
+.slick-prev
+{
+    left:0;
+    transform: rotate(-45deg);
+}
+.slick-next
+{
+    right:0;
+    transform: rotate(135deg);
+}
+
+/*WhoWeAre*/
+
+
+/*Social*/
+.about_txt
+{
+    margin-top: 20px;
+}
+.social_item
+{
+    width: 100%;
+    border-right: #f38181 1px solid;
+    text-decoration: none;
+    padding: 12px 10px;
+    font-size: 30px;
+    background-color: #fce38a;
+    color:#f38181;
+    transition: background .1s linear,
+    color .1s linear;
+}
+.social_item:last-child
+{
+border-right: 0;
+}
+.social_item:hover
+{
+background-color: #f38181;
+color:#ffffff
+}
+.worker
+{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color:#333;
+    text-align: center;
+}
+.job_title
+{
+    text-align: center;
+    font-size: 15px;
+    color: #b3b3b3;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    margin: 10px 0 60px ;
+}
+
+/*logos*/
+.logos
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -15px;
+}
+.logos_image
+{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.logos_item
+{
+    padding: 0 15px;
+}
+
+/*WOrks*/
+
+.work
+{
+display: flex;
+align-items: center;
+
+}
+
+.work_item
+{
+    position: relative;
+    background: linear-gradient(to bottom,#fce38a,#f38181) ;
+}
+.work_info
+{
+    opacity: 0;
+    color:#fff;
+    width:100%;
+    height: auto;
+    position: absolute;
+    top:40%;
+    padding: 0px 15px;
+    text-align: center;
+    left:0;
+    z-index: auto;
+    transform: translate(0,-50%,0);
+    transition: opacity .2s linear;
+}
+.work_item:hover .work_info{
+opacity: 1;
+}
+.work_item:hover .work_image{
+    opacity : 0.1;
+}
+.work_image
+{
+    width: 100%;
+    display: block; /*чтобы не было отступа снизу*/
+    transition: opacity 0.1s linear;
+}
+.work_title
+{
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.work_txt
+{
+    font-size: 15px;
+    font-weight: 300;
+    font-style:italic;
+}
+
+.reviews_photo--comment
+{
+    position: absolute;
+    width: 160px;
+    top:0px;
+    left:0px;
+    z-index:1;
+}
+
+/*Clients*/
+.section--clients
+{
+    height:auto;
+    background: url("images/clients/clients_bg.jpg") center
+    no-repeat;
+    background-size: cover;
+}
+.clients
+{
+    display:flex;
+    flex-wrap: wrap;
+}
+.clients_col
+{
+    flex:1 1 0;
+}
+.clients_item
+{
+    position: relative;
+    padding: 60px 45px 0 180px;
+}
+.clients_img
+{
+    position: absolute;
+    left:10%;
+    top: 20%;
+    z-index:auto;
+}
+.clients_name
+{
+    font-size: 14px;
+    text-transform: uppercase;
+    color:#333;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+.clients_job_title
+{
+    position: relative;
+    font-size: 15px;
+    font-style: italic;
+    font-family:'Roboto', sans-serif;
+}
+.clients_job_title:after
+{
+    position: absolute;
+    top:95%;
+    left:0;
+    z-index:1;
+    content:"";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #f38181;
+    margin-top: 15px;
+}
+.clients_txt
+{
+    padding-top: 35px;
+    color:#b2b2b2;
+    font-size: 15px;
+    font-family:'Roboto', sans-serif;
+}
+
+/*blog*/
+.blog
+{
+    display: flex;
+}
+.blog_img
+{
+    width: 380px;
+}
+.blog_item
+{
+    position: relative;
+    flex: 1 1 0;
+    padding: 0 30px 20px 0;
+}
+
+.blog_title
+{
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.blog_data
+{
+    position: absolute;
+    left:-20px;
+    top: 160px;
+    z-index: auto;
+}
+.blog_txt
+{
+    font-size: 15px;
+    font-family:'Roboto', sans-serif;
+    color: #b3b3b3;
+}
+.blog_txt::after{
+    content:"";
+    display: block;
+    width: 380px;
+    height: 1px;
+    background-color: #e5e5e5;
+    margin: 0 auto;
+    text-align: center;;
+
+
+}
+.reaction
+{
+    margin-top: 20px;
+    position: relative;
+}
+.reacton_img
+{
+
+    z-index:1;
+}
+.reaction_counter
+{
+ color:#b3b3b3;
+ font-size: 15px;
+ font-style: italic;
+ font-family:'Roboto', sans-serif;
+ margin-right: 30px;
+}
+.reacton_img--last
+{
+    left:19%;
+}
+/*map*/
+
+.section--map
+{
+    width: 100%;
+    height: 200px;
+    background: url("images/map_bg.jpg") center
+    no-repeat;
+    background-size: cover;
+    padding: 55px 0 55px 0;
+    margin-bottom: 80px;
+}
+.map{
+    text-align: center;
+}
+.map_txt
+{
+    color:#f38181;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+}
+.map_txt::after
+{
+
+    content:"";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #f38181;
+    margin: 10px auto ;
+}
+/*footer*/
+/*First Footer Col*/
+.footer_inner
+{
+    display: flex;
+    margin-bottom: 70px;
+}
+.footer_logo
+{
+    color:#ccc;
+    font-weight: bold;
+    font-size: 46px;
+}
+
+.footer_col--first
+{
+    padding-right: 50px;
+    width: 40%;
+}
+.footer_text
+{
+    margin: 50px 0;
+    font-size: 15px;
+    font-family:'Roboto', sans-serif;
+    color: #b3b3b3;
+}
+.f_counter
+{
+font-size: 18px;
+font-weight: 700;
+}
+.footer_followers::after{
+    content:"";
+    display: block;
+    width: 430px;
+    height: 1px;
+    background-color: #e5e5e5;
+    margin-top: 20px;
+}
+.footer_folow
+{
+    margin:20px 0 40px;
+}
+.follow_item
+{
+    text-decoration: none;
+    color:#95e1d3;
+    padding-right: 10px;
+}
+.follow_us
+{
+ color: #b1b1b1;
+ font-size: 15px;
+ font-style: italic;
+ font-family:'Roboto', sans-serif;
+ padding-right: 10px;
+}
+.subcribe
+{
+    display:flex;
+}
+.subcribe_input
+{
+    max-width: 100%;
+    width: 230px;
+    height:40px;
+    padding: 10px;
+    color: #b1b1b1;
+    font-size: 15px;
+    font-style: italic;
+    font-family:'Roboto', sans-serif;
+    border:  1px solid #e7e7e7;
+}
+
+.subcribe_input:focus{
+    outline:0;
+}
+.subcribe_btn
+{
+    padding: 10 px;
+    width: 150px;
+    height:40px;
+    border:0;
+    background-color: #95e1d3;
+    cursor: pointer;
+    text-transform: uppercase;
+    color:#ffffff;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.subcribe_btn:hover{
+    background-color: #74c7b8   ;
+}
+
+.subcribe_btn:focus{
+    outline:0;
+}
+
+/*Second Footer col*/
+
+.footer_col--second
+{
+    padding-right: 60px;
+    width: 400px;
+}
+.footer_blogs_item
+{
+    position: relative;
+    margin-top:  45px;
+}
+.footer_blogs_img
+{
+    position: absolute;
+    left:0;
+    top:10%;
+}
+.footer_blogs
+{
+    margin-top: 20px;
+    font-size: 14px;
+    color:#333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.footer_blogs_blog
+{
+    padding: 20px 0px 10px 140px;
+}
+.footer_blogs_txt
+{
+    font-size: 12px;
+    color:#333;
+    text-transform: uppercase;
+}
+.footer_blogs_data
+{
+    font-size: 13px;
+    font-style: italic;
+    font-family:'Roboto', sans-serif;
+    color: #b1b1b1;
+}
+/*Third Footer col*/
+.footer_col--third
+{
+    width:300px;
+}
+
+.instagram
+{
+    margin-top: 45px;
+    margin-bottom: 30px;
+}
+
+.instagram_photo
+{
+    margin: 0 5px 5px 0;
+}
+.instagram_link
+{
+    text-decoration: none;
+    font-size: 13px;
+    font-style: italic;
+    font-family:'Roboto', sans-serif;
+    padding-right: 10px;
+    color:#aeaeae;
+}
+
+.container--last::after
+{
+    content:"";
+    display: block;
+    width: 1200px;
+    height: 1px;
+    background-color: #e5e5e5;
+    margin-top: 20px;
+}
+.mogo_footer
+{
+    margin: 25px 0;
+    color:#333;
+    text-align: center;
+    font-size: 14px;
+}
+.mogo_link
+{
+    text-decoration: none;
+    color:#f49f9f;
+}
+
+
+@media (max-width:1230px)
+{
+  /*Intro*/
+  .intro_suptitle{
+    font-size: 52px;
+  }
+  .intro_title
+  {
+    font-size: 120px;
+  }
+
+    .about
+    {
+       align-items: center;
+        margin-top: 50px;
+        flex-direction: column;
+
+    }
+
+    .about_item
+    {
+        margin-bottom: 30px;
+    }
+    .about:last-child {
+        margin-bottom: 0;
+    }
+
+   /*rewiews*/
+   .reviews_author
+    {
+    font-size: 20px;
+    }
+    .reviews_text
+    {
+        font-size: 20px;
+    }
+    .reviews_text:after{
+        width: 8%;
+        height: 2%;
+    }
+    /*blog*/
+    .blog
+    {
+        flex-direction: column;
+    }
+    .blog_data
+    {
+    position: relative;
+    left:-180px;
+    top: -90px;
+    }
+    .blog_txt
+    {
+        width: 380px;
+        text-align: center;
+    }
+    .blog_item
+    {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+    /*works*/
+    .work
+    {
+        flex-direction: column;
+    }
+
+    .reaction
+    {
+        margin: 0;
+    }
+    /*footer*/
+    .footer_inner
+    {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    }
+    .footer_blogs_item
+    {
+        margin: 0;
+    }
+    .footer_blogs
+    {
+        margin-top: 40px;
+    }
+
+    .footer_col
+    {
+        padding: 0;
+    }
+    .instagram
+    {
+        margin: 0;
+    }
+    .footer_followers::after
+    {
+        width: 100%;
+    }
+
+}
+
+@media (max-width:990px)
+{
+  /*Intro*/
+  .intro_suptitle{
+    font-size: 48px;
+  }
+  .intro_title
+  {
+    font-size: 110px;
+  }
+  /*Stat*/
+  .stat
+  {
+    justify-content: center;
+    padding:15px 0;
+  }
+  .stat_item
+  {
+    flex:none;
+    width:100%;
+    border: 1px solid #b5eae0;
+  }
+/*services*/
+.services_item
+{
+    width: 50%;
+}
+.services_item--border
+{
+border-bottom: 0;
+}
+
+/*rewiews*/
+.reviews_text
+{
+    font-size: 18px;
+}
+.reviews_author
+{
+    font-size: 18px;
+}
+
+}
+
+
+
+@media (max-width:770px)
+{
+    /*nzv*/
+
+    .nav
+    {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top:100%;
+        left:0;
+        background-color: #f38181;
+    }
+    .nav.active
+    {
+       display: block;
+    }
+    .nav_link
+    {
+        font-size: 12px;
+        display: block;
+        padding: 10px 0 ;
+    }
+    .nav_toggle
+    {
+        display: block;
+
+    }
+    /*Slider_text*/
+    .slider_text
+    {
+        display: none;
+    }
+    .slider_item.active::before
+    {
+        width:50%;
+    }
+    /*about*/
+
+     /*wedo*/
+ .wedo_img
+ {
+    width: 100%;
+    margin-bottom: 30px;
+ }
+ .wedo_item
+ {
+     width: 100%;
+ }
+
+ /*rewiews*/
+
+ .rewiews_item
+ {
+
+    align-items: center;
+    padding-left: 0;
+
+ }
+.reviews_text
+{
+    font-size: 18px;
+}
+.reviews_author
+{
+    font-size: 18px;
+}
+.reviews_photo
+{
+    position:relative;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.reviews_text:after{
+    bottom:-30%;
+}
+.reviews_photo--comment
+{
+    position: relative;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rewiews .slick-slider
+{
+    padding: 0 50px;
+}
+
+}
+
+@media (max-width:590px)
+{
+  /*Intro*/
+
+  .intro_suptitle{
+    font-size: 25px;
+  }
+  .intro_title
+  {
+    font-size: 50px;
+  }
+
+  /*section*/
+  .section_header{
+    margin-bottom: 50px;
+  }
+  .secton_suptitle
+  {
+    font-size:20px;
+  }
+   .section_title
+    {
+       font-size:24px;
+    }
+    .section_title::after{
+        margin:20px auto;
+    }
+    /*services*/
+    .services_item
+    {
+        width: 100%;
+    }
+    .services_item--border
+    {
+    border-bottom: 0;
+    padding-bottom: 0;
+    }
+      /*devices*/
+      .devices_item
+      {
+        width: 80%;
+      }
+      .devices_item--iphone
+      {
+        width: 40%;
+      }
+
+       /*rewiews*/
+
+       .reviews_text
+       {
+           font-size: 17px;
+       }
+       .reviews_author
+       {
+           font-size: 17px;
+       }
+       .reviews_photo
+       {
+           position:relative;
+           margin-bottom: 40px;
+       }
+       .reviews_text:after{
+           bottom:-10%;
+           height: 1px;
+       }
+       .reviews_photo--comment
+       {
+           position:relative;
+           margin-bottom: 40px;
+           left: 0;
+           top: 0;
+       }
+    /*Logos*/
+    .logos
+    {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .logos_item
+    {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+    .logos_image
+    {
+        margin:0 auto;
+    }
+    /*footer*/
+    .footer_col
+    {
+        width: 100%;
+    }
+    .footer_col:last-child
+    {
+        width:300px;
+    }
+
+}
+@media (max-width:400px)
+{
+    /*about*/
+    .about_item
+    {
+        width: 100%;
+    }
+    /*blog*/
+    .blog_img{
+        width: 100%;
+    }
+    .blog_txt
+    {
+        width: 100%;
+    }
+    .blog_data
+    {
+        left: -45%;
+    }
+
+}
+
