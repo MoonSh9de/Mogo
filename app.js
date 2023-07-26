@@ -5,7 +5,7 @@ $(function() //
     var scrollOffset=$(window).scrollTop(); //переменная,котороя хранит текущий скролл страницы в пикселях
     checkScroll(scrollOffset); //вызов функции checkScroll
     $(window).on("scroll load resize" , function()//при скроле работает функция
-    { 
+    {
         scrollOffset=$(this).scrollTop();
         checkScroll(scrollOffset);
     });
@@ -29,7 +29,7 @@ $(function() //
     let $this=$(this);
     let blockID = $(this).data('scroll');
     let blockOffSet=$(blockID).offset().top;
-    nav.removeClass("active") 
+    nav.removeClass("active")
     nav_toggle.addClass("active");
     $("html,body").animate({
         scrollTop:blockOffSet - 20},500);
@@ -37,13 +37,13 @@ $(function() //
 
    /*Menu nav toggle*/
     let nav = $("#nav");
-    let nav_toggle = $("#nav_toggle");
+    let nav_toggle = $("#nav-toggle");
 
     nav_toggle.on("click",function(event){
-    event.preventDefault();
+        event.preventDefault();
 
-    $(this).toggleClass("active");
-    nav.toggleClass("active")
+        $(this).toggleClass("active");
+        nav.toggleClass("active")
    });
 
    /*collapse*/

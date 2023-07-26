@@ -1,6 +1,6 @@
-body
-{
+body {
     margin: 0; /*величина внешних отступов*/
+
     font-family: 'Montserrat', sans-serif; /*добавление шрифта с google fonts*/
     font-size: 15px; /*размер шрифта*/
     line-height: 1.6; /*межстрочный отступ*/
@@ -10,34 +10,38 @@ body
 
 *,
 *:before,
-*:after
-{ /*для всех элементов страницы и для псевдоэлементов before и after*/
+*:after { /*для всех элементов страницы и для псевдоэлементов before и after*/
     box-sizing: border-box; /*установка для браузера определяет как вычисляется общая ширина и высота элемента.*/
 }
-h1,h2,h3,h4,h5
-{
+
+h1,h2,h3,h4,h5 {
     margin:0 auto;
 }
-hr{
+
+hr {
     display: block;
+
     width:100%;
-    border:0;
     height:1px;
+
     margin:50px 0;
+
+    border:0;
     background-color: #e5e5e5;
 }
+
 /*Container*/
-.container
-{
-width:100%;
-height: 100%; /*ширина 100%*/
-max-width:1200px; /*максимальная ширина блока - 1200 пк.*/
-margin:0 auto; /*убираем отсупы.*/
-padding: 0 15px;
+.container {
+    width:100%;
+    height: 100%; /*ширина 100%*/
+    max-width:1200px; /*максимальная ширина блока - 1200 пк.*/
+
+    margin:0 auto; /*убираем отсупы.*/
+    padding: 0 15px;
 }
+
 /*header*/
-.header
-{
+.header {
     width: 100%;
     position :absolute;
     /*Абсолютное позиционирование делает две вещи:
@@ -50,92 +54,100 @@ padding: 0 15px;
     z-index: 1; /*определяет положение позиционированного элемента и его дочерних элементов или флекс-элементов по оси z. Перекрывающие элементы с большим значением z-index будут накладываться поверх элементов с меньшим z-index.*/
 }
 
-.header_inner
-{
+.header-inner {
     display: flex; /*флексбокс- выстраивание элементов внутри какого-то крупного блока по прямой оси.*/
     justify-content: space-between; /*определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера.
     space-between - Равномерно распределяет все элементы по ширине flex-блока. Первый элемент вначале, последний в конце*/
-    align-items:center; /*выравнивание элементов по горизонатли по центру*/
+    align-items:center; /*выравнивание элементов по горизонтали по центру*/
 }
-.header_logo
-{
-        font-size:30px;
-        font-weight: 700;
-        color:#ffffff;
-        cursor: pointer;
+
+.header__logo {
+    font-size:30px;
+    font-weight: 700;
+    color:#ffffff;
+
+    cursor: pointer;
 }
-.header.fixed
-{
+
+.header.fixed {
     background-color: #f38181 ;
-    position: fixed;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+
+
+    transform: translate3d(0,0,0);
+
+    position: fixed;
     top:0;
     left:0;
     right:0;
-    transform: translate3d(0,0,0);
 }
 
-.header.active{
+.header.active {
    background-color: #f38181 ;
 }
+
 /*Nav*/
-.nav
-{
- font-size: 14px;
- text-transform: uppercase; /*Буквы будут преобразовываться в большие*/
+.nav {
+    font-size: 14px;
+    text-transform: uppercase; /*Буквы будут преобразовываться в большие*/
 }
 
-.nav_link
-{
+.nav__link {
     display:inline-block;
     vertical-align:top; /*подразумевает, что его содержимое поднимется к его же верхней границе.*/
+
     margin: 0 20px;
-    position: relative; /*Относительное позиционирование сдвигает элемент относительно его обычного положения.*/
+
     color: #fff;
     text-decoration: none;
+
     transition: color 0.2s linear; /*плавное изменение подстветки*/
+
+    position: relative; /*Относительное позиционирование сдвигает элемент относительно его обычного положения.*/
 }
-.nav_link:after
-{
-    content: "";
+
+.nav__link:after {
     display:block;
+    content: "";
+
     width:100%;
     height:3px;
-    opacity: 0;
+
     background-color:#fce38a;
+    opacity: 0;
+
+    transition: opacity 0.2 linear;
 
     position: absolute;
     top:100%;
     left:0;
     z-index:1;
-    transition: opacity 0.2 linear;
 }
-.nav_link:hover{
-    color: #fce38a;
 
+.nav__link:hover {
+    color: #fce38a;
 }
-.nav_link:hover:after,
-.nav_link.active:after
-{
+
+.nav__link:hover:after,
+.nav__link.active:after {
     opacity: 1;
 }
-.nav_toggle
-{
+
+.nav-nav__toggle {
 
     display: none;
+
     padding: 15px 0;
+
     background: none;
     border: 0;
+
     cursor: pointer;
 }
-.toggle_btn
-{
-    width: 40px;
-    height: 40px;
-}
-.nav-toggle_item
-{
+
+.nav-nav__toggle-item {
     display: block;
+
     width: 30px;
     height: 3px;
 
@@ -148,10 +160,11 @@ padding: 0 15px;
 
     position: relative;
 }
-.nav-toggle_item:before,
-.nav-toggle_item:after
-{
+
+.nav-nav__toggle-item:before,
+.nav-nav__toggle-item:after {
     content: "";
+
     width: 100%;
     height: 100%;
 
@@ -163,140 +176,160 @@ padding: 0 15px;
     left: 0;
     z-index:1;
 }
-.nav-toggle_item:before
-{
+
+.nav-nav__toggle-item:before {
     top:-8px;
 }
-.nav-toggle_item:after
-{
+
+.nav-nav__toggle_item:after {
     top:8px;
 }
 
-.nav_toggle.active .nav-toggle_item
-{
-background: none;
-
+.nav-nav__toggle.active .nav-toggle__item {
+    background: none;
 }
-.nav_toggle.active  .nav-toggle_item::before{
+
+.nav-nav__toggle.active  .nav-toggle__item::before {
     transform-origin: left top;
     transform: rotate(45deg) translateX(-2px);
 }
-.nav_toggle.active  .nav-toggle_item::after{
+
+.nav-nav__toggle.active  .nav-toggle__item::after {
     transform-origin: left bottom;
     transform: rotate(-45deg) translateX(-3px);;
 }
+
 /*intro*/
-.intro
-{
-    padding-top: 120px;
+.intro {
     display:flex;
     flex-direction: column;
     justify-content: center;
+
     width: 100%;
     min-height: 820px;
-    position: relative;
-    background: url("images/intro/intro1_01.jpg") center
-    no-repeat;
+
+    padding-top: 120px;
+
+    background: url("images/intro/intro.jpg") center no-repeat;
     -webkit-background-size: cover;
     background-size: cover; /*фоновое изображение масштабируется так, чтобы полностью заполнить пространство элемента, при этом сохраняя свои пропорции*/
+
+    position: relative;
 }
-.intro_inner
-{
+
+.intro__inner {
     width: 100%;
     max-width: 800px;
+
     margin: 0 auto;
+
     text-align: center;
 }
-.intro_suptitle
-{
+
+.intro__suptitle {
     margin: 40px;
+
     font-size: 72px;
     font-weight: 400;
     font-family: 'Kaushan Script', cursive;
     color:#fff;
 }
-.intro_title
-{
+
+.intro__title {
     font-size:150px;
     font-weight: 700;
     color:#fff;
     text-transform: uppercase;
     line-height: 1; /*Расстояние между строками*/
-
 }
-.intro_title:after{
-    content:"";
+
+.intro__title:after{
     display: block;
+    content:"";
+
     width: 60px;
     height: 3px;
+
     background-color: #fff;
     margin: 60px auto ;
 }
 /*button*/
-.link_button
-{
+
+.intro__button {
     display: inline-block;
     vertical-align: top;
+
+    width: 160px;
+    height: 40px;
+
+    padding-top: 6px;
+
     border: 3px solid #fff;
+
+    font-size: 14px;
+    font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     text-decoration: none;
-    width: 160px;
-    height: 40px;
     color:#fff;
-    padding-top: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    transition: background .2s linear,
-    color .2s linear;
+
+    transition: background .2s linear, color .2s linear;
 }
-.link_button:hover
-    {
-        background-color: #fce38a;
-        color:#333;
-    }
+
+.intro__button:hover {
+    background-color: #fce38a;
+    color:#333;
+}
+
 /*slider*/
-.intro_slider
-{
-display: flex;
-justify-content: space-between;
-margin-top: 15%;
+.intro__slider {
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 15%;
 }
-.slider_item
-{
+
+.intro__slider-item {
     height: 100%;
     width: 24%;
+
     padding: 10px 0 ;
+
     border-top: 3px solid #fff;
+
     font-size: 18px;
     color:#fff;
     text-transform: uppercase;
     opacity: .7; /*прозрачность*/
+    
     position: relative;
 }
-.slider_number
-{
+
+.intro__slider-item--is-active {
+    opacity: 1;
+}
+
+.slider__number {
     font-weight: 700;
     font-size: 24px;
 }
-.slider_item.active
-{
-    opacity: 1;
 
-}
-.slider_item.active:before
-{
-    content:"";
+.intro__slider-item--is-active:before {
     display:block;
+    content:"";
+
     width: 70px;
     height:3px;
+
+    background-color:#f38181;
+
     position: absolute;
     top:-3px;
     left:0;
     z-index:1;
-    background-color:#f38181;
 }
+
 /*section*/
 
 .section

@@ -8,60 +8,60 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
         <title>Mogo</title>
     </head>
     <body>
 <!--Header -->
         <header class="header" id="header" >
             <div class="container">
-                <div class="header_inner"> 
-                    <div class="header_logo" data-scroll="#intro">MoGo </div>
+                <div class="header-inner">
+                    <div class="header__logo" data-scroll="#intro">MoGo </div>
                     <nav class="nav" id="nav">
-                        <a class="nav_link active" href="#" data-scroll="#about">About</a>
-                        <a class="nav_link" href="#" data-scroll="#service">Service</a>
-                        <a class="nav_link" href="#" data-scroll="#work">Work</a>
-                        <a class="nav_link" href="#" data-scroll="#blog">Blog</a>
-                        <a class="nav_link" href="#" data-scroll="#contact">Contact</a>
-                        <a class="nav_link" href="#" ><img src="images/intro/cart.jpg"></a>
-                        <a class="nav_link" href="#" ><img src="images/intro/search.jpg"></a>
+                        <a class="nav__link active" href="#" data-scroll="#about">About</a>
+                        <a class="nav__link" href="#" data-scroll="#service">Service</a>
+                        <a class="nav__link" href="#" data-scroll="#work">Work</a>
+                        <a class="nav__link" href="#" data-scroll="#blog">Blog</a>
+                        <a class="nav__link" href="#" data-scroll="#contact">Contact</a>
+                        <a class="nav__link" href="#" ><img src="images/intro/shopping-cart.png"></a>
+                        <a class="nav__link" href="#" ><img src="images/intro/magnifying-glass.png"></a>
+                        <button class="nav-nav__toggle" type="button" id="nav-toggle">
+                            <span class="nav-nav__toggle-item">Menu</span>
+                        </button>
                     </nav>
-                    
-                    <button class="nav_toggle" type="button" id="nav_toggle">
-                        <span class="nav-toggle_item">Menu</span>
-                    </button>
 
                 </div>
             </div>
         </header>
 <!--intro-->
         <div class="intro" id="intro">
-            <div class="container"> 
-                <div class="intro_inner">
-                    <h2 class="intro_suptitle">Creative Template </h2>
-                    <h1 class ="intro_title">Welcome to Mogo</h1>
-                    <a class="link_button" href="#">learn more</a>   
+            <div class="container">
+                <div class="intro__inner">
+                    <h2 class="intro__suptitle">Creative Template </h2>
+                    <h1 class ="intro__title">Welcome to Mogo</h1>
+                    <a class="intro__button" href="#">learn more</a>
                 </div>
-                <div class="intro_slider">
-                    <div class="slider_item active">
-                        <span class="slider_number">01</span>
-                        <span class="slider_text">Intro</span>
+                <div class="intro__slider">
+                    <div class="intro__slider-item intro__slider-item--is-active">
+                        <span class="slider__number">01</span>
+                        <span class="slider__text">Intro</span>
                     </div>
-                    <div class="slider_item">
-                        <span class="slider_number">02</span>
-                        <span class="slider_text">Work</span>
+                    <div class="intro__slider-item">
+                        <span class="slider__number">02</span>
+                        <span class="slider__text">Work</span>
                     </div>
-                    <div class="slider_item">
-                        <span class="slider_number">03</span>
-                          <span class="slider_text">About</span>
+                    <div class="intro__slider-item">
+                        <span class="slider__number">03</span>
+                          <span class="slider__text">About</span>
                     </div>
-                    <div class="slider_item">
-                        <span class="slider_number">04</span>
-                        <span class="slider_text"> Contacts</span>
+                    <div class="intro__slider-item">
+                        <span class="slider__number">04</span>
+                        <span class="slider__text"> Contacts</span>
                     </div>
                 </div>
             </div>
         </div>
+
 <!--about-->
         <section class="section" id="about">
             <div class="container">
@@ -70,7 +70,7 @@
                     <h2 class="section_title">Story about us</h2>
                     <div class="section_text">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </p>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                     <div class="about_item">
                         <div class="about_img">
                             <img src="images/about/about_3.jpg">
-                        </div> 
+                        </div>
                         <div class="about_txt">Super team</div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
 <!--WE WORK WITH-->
     <section class="section" id="service">
         <div class="container">
-        
+
             <div class="section_header">
                 <h3 class="secton_suptitle">We work with</h3>
                 <h2 class="section_title">Amazing Services</h2>
@@ -170,7 +170,7 @@
 <!--Devices-->
     <section class="section section--devices"> <!--Модификатор для section-->
         <div class="container">
-        
+
             <div class="section_header">
                 <h3 class="secton_suptitle">For all devices</h3>
                 <h2 class="section_title">Unique design</h2>
@@ -179,19 +179,19 @@
             <div class="devices">
                 <img class= "devices_item" src="images/ipad.png" alt=" ">
                 <img class= "devices_item devices_item--iphone" src="images/iphone.png" alt=" ">
-            </div>   
-            
+            </div>
+
         </div>
     </section>
 <!--WEDO-->
     <section class="section " id="about"> <!--Модификатор для section-->
         <div class="container">
-        
+
             <div class="section_header">
                 <h3 class="secton_suptitle">Service</h3>
                 <h2 class="section_title">What we do</h2>
                 <div class="section_text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </div>
             </div>
             <div class="wedo">
@@ -281,7 +281,7 @@
                     <div class="about_img">
                         <img class="image_worker"src="images/workers/workers_02.jpg">
                     </div>
-                        
+
                     <div class="social">
                         <div class="about_txt">
                             <a class="social_item" href="#" target="_blank">
@@ -295,7 +295,7 @@
                             </a>
                             <a class="social_item" href="#" target="_blank">
                                 <i class="fab fa-instagram"> </i>
-                            </a>        
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -320,7 +320,7 @@
                                 </a>
                                 <a class="social_item" href="#" target="_blank">
                                     <i class="fab fa-instagram"> </i>
-                                </a>             
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -345,13 +345,13 @@
                             </a>
                             <a class="social_item" href="#" target="_blank">
                                 <i class="fab fa-instagram"> </i>
-                            </a>             
+                            </a>
                         </div>
                     </div>
                 </div>
                     <div class="worker">Michael Fertig</div>
                     <div class="job_title">Developer</div>
-            </div>      
+            </div>
         </div>
     </section>
 <!--Logos-->
@@ -474,7 +474,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div>
                     <div class="rewiews_item">
                         <img class="reviews_photo--comment" src="images/comment/comment_image.jpg" alt="">
@@ -527,7 +527,7 @@
                         <div class="clients_txt">Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</div>
                     </div>
                 </div>
-                
+
                 </div>
             </div>
     </section>
@@ -551,10 +551,10 @@
                             <nobr class="reaction_counter">542</nobr>
                             <img class="reacton_img" src="/images/blog/reactions_02.jpg" alt="">
                             <nobr class="reaction_counter">77</nobr>
-                        </div> 
-                    </div> 
-                 
-        
+                        </div>
+                    </div>
+
+
                         <div class="blog_item">
                             <img class="blog_img" src="images/blog/blog_02.jpg" alt="">
                             <img class="blog_data" src="images/blog/data_02.jpg" alt="">
@@ -565,9 +565,9 @@
                                 <nobr class="reaction_counter">992</nobr>
                                 <img class="reacton_img" src="images/blog/reactions_02.jpg" alt="">
                                 <nobr class="reaction_counter">42</nobr>
-                            </div> 
-                        </div> 
-        
+                            </div>
+                        </div>
+
 
                             <div class="blog_item">
                                 <img class="blog_img" src="images/blog/blog_03.jpg" alt="">
@@ -579,8 +579,8 @@
                                     <nobr class="reaction_counter">1560</nobr>
                                     <img class="reacton_img" src="images/blog/reactions_02.jpg" alt="">
                                     <nobr class="reaction_counter">98</nobr>
-                                </div> 
-                            </div> 
+                                </div>
+                            </div>
             </div>
     </section>
 <!-- Map -->
@@ -618,17 +618,17 @@
                             <i class="fab fa-pinterest-p"> </i>
                         </a>
                         <a class="follow_item" href="#" target="_blank">
-                            <i class="fa-brands fa-google-plus-g"></i> 
-                        </a> 
+                            <i class="fa-brands fa-google-plus-g"></i>
+                        </a>
                         <a class="follow_item" href="#" target="_blank">
                             <i class="fa-brands fa-youtube"></i>
-                        </a> 
+                        </a>
                         <a class="follow_item" href="#" target="_blank">
                             <i class="fa-brands fa-dribbble"></i>
-                        </a>    
+                        </a>
                         <a class="follow_item" href="#" target="_blank">
                             <i class="fa-brands fa-tumblr"></i>
-                        </a>          
+                        </a>
                    </div>
                 <form class="subcribe" action="/" method="post">
                     <input class="subcribe_input" type="emai" name="name"
@@ -642,7 +642,7 @@
                     <div class="footer_blogs_item">
                         <img class="footer_blogs_img" src="images/footer/blogs_1.jpg" alt="">
                         <div class="footer_blogs_blog">
-                            <div class="footer_blogs_txt">Lorem ipsum dolor sit amet, 
+                            <div class="footer_blogs_txt">Lorem ipsum dolor sit amet,
                                 consectetur adipiscing</div>
                             <div class="footer_blogs_data">Jan 9, 2016</div>
                         </div>
@@ -651,7 +651,7 @@
                     <div class="footer_blogs_item">
                         <img class="footer_blogs_img" src="images/footer/blogs_2.jpg" alt="">
                         <div class="footer_blogs_blog">
-                            <div class="footer_blogs_txt">Consectetur adipiscing elit, 
+                            <div class="footer_blogs_txt">Consectetur adipiscing elit,
                                 sed do eiusmod tempor</div>
                             <div class="footer_blogs_data">Jan 9, 2016</div>
                         </div>
@@ -660,7 +660,7 @@
                     <div class="footer_blogs_item">
                         <img class="footer_blogs_img" src="images/footer/blogs_3.jpg" alt="">
                         <div class="footer_blogs_blog">
-                            <div class="footer_blogs_txt">sed do eiusmod tempor 
+                            <div class="footer_blogs_txt">sed do eiusmod tempor
                             incididunt ut labore</div>
                             <div class="footer_blogs_data">Jan 9, 2016</div>
                         </div>
@@ -679,7 +679,7 @@
                                 <img class="instagram_photo" src="images/footer/blogs_6.jpg" alt="">
                                 <img class="instagram_photo" src="images/footer/blogs_9.jpg" alt="">
                                 <img class="instagram_photo" src="images/footer/blogs_12.jpg" alt="">
-            
+
                         </div>
                         <a class="instagram_link" href="#">View more photos</a>
                     </div>
