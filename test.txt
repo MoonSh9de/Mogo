@@ -1,8 +1,0 @@
-text file
-<<<<<<< HEAD
-HAHAHAHAHA
-=======
-
-This file was modified in the feature branch
-hf
->>>>>>> new-feature
