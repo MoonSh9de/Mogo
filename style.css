@@ -51,7 +51,7 @@ hr {
     top: 0;
     left:0;
     right:0;
-    z-index: 1; /*определяет положение позиционированного элемента и его дочерних элементов или флекс-элементов по оси z. Перекрывающие элементы с большим значением z-index будут накладываться поверх элементов с меньшим z-index.*/
+    z-index: 999; /*определяет положение позиционированного элемента и его дочерних элементов или флекс-элементов по оси z. Перекрывающие элементы с большим значением z-index будут накладываться поверх элементов с меньшим z-index.*/
 }
 
 .header-inner {
@@ -493,13 +493,13 @@ hr {
     font-size: 14px;
     font-weight: 400px;
  }
- /*service*/
+ /*services*/
 
- .service {
+ .services {
     display:flex;
     flex-wrap: wrap;
  }
- .service__item {
+ .services__item {
     width: 33.33333%;
 
     margin-bottom: 40px;
@@ -508,19 +508,19 @@ hr {
 
     position:relative;
 }
- .service__item--border {
+ .services__item--border {
     padding-bottom: 25px;
 
     border-bottom: 1px solid #e5e5e5;
 }
-.service__icon {
+.services__icon {
     position:absolute;
     top:0;
     left:28px;
     z-index:auto;
 }
 
-.service__title {
+.services__title {
     margin-bottom: 10px;
 
     text-transform:uppercase;
@@ -528,7 +528,7 @@ hr {
     color:#333;
 }
 
-.service__text {
+.services__text {
     font-size:15px;
     color:#999;
     font-family: 'Roboto', sans-serif;
@@ -1094,10 +1094,12 @@ hr {
 }
 
 /*footer*/
+.footer {
+    padding-top: 40px;
+}
 /*First Footer Col*/
 .footer__inner {
     display: flex;
-
     margin-bottom: 70px;
 }
 .footer__logo {
@@ -1423,12 +1425,12 @@ hr {
         border: 1px solid #b5eae0;
     }
 
-    /*service*/
-    .service__item {
+    /*services*/
+    .services__item {
         width: 50%;
     }
 
-    .service__item--border {
+    .services__item--border {
         border-bottom: 0;
     }
 
@@ -1560,12 +1562,12 @@ hr {
         margin:20px auto;
     }
 
-    /*service*/
-    .service__item {
+    /*services*/
+    .services__item {
         width: 100%;
     }
 
-    .service__item--border
+    .services__item--border
     {
         padding-bottom: 0;
 
