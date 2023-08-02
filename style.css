@@ -133,6 +133,36 @@ hr {
     opacity: 1;
 }
 
+.search {
+    display: inline-block;
+    position: relative;
+}
+
+.search__input {
+    width: 200px;
+
+    border-radius: 20px;
+    border-width: 0;
+
+    font-family: 'Montserrat', sans-serif;
+}
+.search__input:focus {
+    border: 1px solid #fce38a;
+
+
+    outline: none;
+}
+input {padding-left: 10px;}
+.search__link {
+
+    color: #fff;
+    position: absolute;
+    right: -30px;
+}
+
+.search__link:hover {
+    color: #fce38a;
+}
 .nav-nav__toggle {
 
     display: none;
@@ -1406,8 +1436,8 @@ hr {
         font-size: 48px;
     }
 
-    .intro_title {
-        font-size: 110px;
+    .intro__title {
+        font-size: 100px;
     }
 
     /*Stat*/
@@ -1442,12 +1472,7 @@ hr {
     .reviews__author {
         font-size: 18px;
     }
-}
 
-
-
-@media (max-width:770px)
-{
     /*nav*/
     .nav {
         display: none;
@@ -1460,6 +1485,13 @@ hr {
         top:100%;
         left:0;
     }
+}
+
+
+
+@media (max-width:770px)
+{
+
 
     .nav.active {
        display: block;
@@ -1539,11 +1571,11 @@ hr {
   /*Intro*/
 
     .intro__suptitle {
-        font-size: 25px;
+        font-size: 40px;
     }
 
     .intro__title {
-        font-size: 50px;
+        font-size: 68px;
     }
 
     /*section*/
@@ -1636,6 +1668,17 @@ hr {
 }
 @media (max-width:400px)
 {
+
+    /*Intro*/
+
+    .intro__suptitle {
+        font-size: 28px;
+    }
+
+    .intro__title {
+        font-size: 54px;
+    }
+
     /*about*/
     .about__item {
         width: 100%;
