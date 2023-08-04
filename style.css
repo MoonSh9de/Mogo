@@ -92,6 +92,21 @@ hr {
     text-transform: uppercase; /*Буквы будут преобразовываться в большие*/
 }
 
+.nav.active {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    background-color: #f38181;
+
+    text-align: center;
+
+    position: absolute;
+    top:100%;
+    left:0;
+}
+
 .nav__link {
     display:inline-block;
     vertical-align:top; /*подразумевает, что его содержимое поднимется к его же верхней границе.*/
@@ -156,79 +171,33 @@ input {padding-left: 10px;}
 .search__link {
 
     color: #fff;
-    position: absolute;
-    right: -30px;
+
 }
 
 .search__link:hover {
     color: #fce38a;
 }
-.nav-nav__toggle {
 
+.nav__toggle {
     display: none;
 
-    padding: 15px 0;
+    border: none;
+    background-color: transparent;
 
-    background: none;
-    border: 0;
-
-    cursor: pointer;
+    color: white;
 }
 
-.nav-nav__toggle-item {
+.fa-bars {
     display: block;
-
-    width: 30px;
-    height: 3px;
-
-    background-color: #fff;
-
-    transition: background .2s linear;
-
-    color: transparent;
-    font-size: 0;
-
-    position: relative;
 }
 
-.nav-nav__toggle-item:before,
-.nav-nav__toggle-item:after {
-    content: "";
-
-    width: 100%;
-    height: 100%;
-
-    background-color: #fff;
-
-    transition: transform .2s linear;
-
-    position: absolute;
-    left: 0;
-    z-index:1;
+.fa-circle-xmark.hidden {
+    display: none;
 }
 
-.nav-nav__toggle-item:before {
-    top:-8px;
+.fa-bars.hidden {
+    display: none;
 }
-
-.nav-nav__toggle_item:after {
-    top:8px;
-}
-
-.nav-nav__toggle.active .nav-toggle__item {
-    background: none;
-}
-
-.nav-nav__toggle.active  .nav-toggle__item::before {
-    transform-origin: left top;
-    transform: rotate(45deg) translateX(-2px);
-}
-
-.nav-nav__toggle.active  .nav-toggle__item::after {
-    transform-origin: left bottom;
-    transform: rotate(-45deg) translateX(-3px);;
-}
-
 /* *Intro*/
 .intro {
     display:flex;
@@ -1093,7 +1062,7 @@ input {padding-left: 10px;}
     height: 200px;
 
     margin-bottom: 80px;
-    padding: 55px 0 55px 0;
+    padding: 55px 0;
 
     background: url("images/map/map_bg.jpg") center
     no-repeat;
@@ -1125,7 +1094,7 @@ input {padding-left: 10px;}
 
 /*footer*/
 .footer {
-    padding-top: 40px;
+    padding-top: 130px;
 }
 /*First Footer Col*/
 .footer__inner {
@@ -1431,6 +1400,10 @@ input {padding-left: 10px;}
 
 @media (max-width:990px)
 {
+
+    .nav__toggle {
+        display: block;
+    }
   /*Intro*/
     .intro__suptitle {
         font-size: 48px;
@@ -1476,17 +1449,16 @@ input {padding-left: 10px;}
     /*nav*/
     .nav {
         display: none;
+    }
 
-        width: 100%;
+    .nav__link {
+        margin: 10px 0;
+    }
 
-        background-color: #f38181;
-
-        position: absolute;
-        top:100%;
-        left:0;
+    .nav__link--not-hover:after {
+        display: none;
     }
 }
-
 
 
 @media (max-width:770px)
@@ -1503,10 +1475,6 @@ input {padding-left: 10px;}
         padding: 10px 0;
 
         font-size: 12px;
-    }
-
-    .nav__toggle {
-        display: block;
     }
 
     /*Slider_text*/

@@ -1,5 +1,6 @@
 const header = $('#header');
-//
+const headerLogo = $('#header-logo');
+//data-scroll
 const intro = $('#intro');
 const about = $('#about');
 const services = $('#services');
@@ -91,21 +92,43 @@ const addActiveToBlocks = function() {
 //     let blockID = $(this).data('scroll');
 //     let blockOffSet=$(blockID).offset().top;
 
-//     const nav__link = $('.nav__link');
+// *    const nav__link = $('.nav__link');
 //     nav__link.removeClass("active")
 //     nav__toggle.addClass("active");
 //     $("html,body").animate({
 //         scrollTop:blockOffSet - 20},500);
 //    });
 
-//    /*Menu nav toggle*/
-//     let nav = $("#nav");
-//     let nav__toggle = $("#nav-toggle");
+   /*Menu nav toggle*/
+    const  nav = $("#nav");
+    const nav__toggle = $("#nav-toggle");
+    const burger = $("#burger");
+    const x_mark = $("#x-mark");
 
-//     nav__toggle.on("click",function(event){
-//         event.preventDefault();
+    nav__toggle.on("click", function(event){
+        event.preventDefault();
+        console.log(nav__toggle.text());
+        $(this).toggleClass("active");
+        nav.toggleClass("active")
+   });
 
-//         $(this).toggleClass("active");
-//         nav.toggleClass("active")
-//    });
+    //Hovers
+    headerLogo.hover(function() {
+        headerLogo.toggleClass('fa-beat-fade');
+    });
+
+    burger.hover(function() {
+        burger.toggleClass('fa-beat-fade');
+    });
+
+    x_mark.hover(function() {
+        x_mark.toggleClass('fa-spin');
+    });
+
+    nav__toggle.on('click', function() {
+        burger.toggleClass('hidden');
+        x_mark.toggleClass('hidden');
+    });
+
+
 

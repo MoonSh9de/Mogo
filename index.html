@@ -16,23 +16,23 @@
         <header class="header" id="header" >
             <div class="container">
                 <div class="header-inner">
-                    <div class="header__logo" data-scroll="#intro">MoGo </div>
+                    <div class="header__logo" data-scroll="#intro" id="header-logo">MoGo</div>
                     <nav class="nav" id="nav">
-                        <a class="nav__link" href="#" data-scroll="about">About</a>
+                        <a class="nav__link active" href="#" data-scroll="about">About</a>
                         <a class="nav__link" href="#" data-scroll="services">Services</a>
                         <a class="nav__link" href="#" data-scroll="work">Work</a>
                         <a class="nav__link" href="#" data-scroll="blog">Blog</a>
                         <a class="nav__link" href="#" data-scroll="contact">Contact</a>
-                        <a class="nav__link" href="#" ><img src="images/intro/shopping-cart.png"></a>
-                            <div class="search">
+                        <a class="nav__link nav__link--not-hover" href="#" ><img src="images/intro/shopping-cart.png"></a>
+                            <div class="nav__link nav__link--not-hover search ">
                                 <input class='search__input' type="text" name="username" placeholder="What do you want to find?">
-                            <a class="search__link" href="#" ><i class="fa-solid fa-magnifying-glass"></i></a>
+                            <a class="search__link" href="#" target="_self" ><i class="fa-solid fa-magnifying-glass"></i></a>
                         </div>
-                        <button class="nav-nav__toggle" type="button" id="nav-toggle">
-                            <span class="nav-nav__toggle-item">Menu</span>
-                        </button>
                     </nav>
-
+                    <button class='nav__toggle' id="nav-toggle">
+                        <i class="fa-solid fa-bars fa-2xl" id="burger"></i>
+                        <i class="fa-regular fa-circle-xmark fa-2xl hidden" id="x-mark"></i>
+                    </button>
                 </div>
             </div>
         </header>
@@ -612,7 +612,7 @@
     </section>
 
 <!-- Map -->
-    <section class="section section--map">
+    <section class="section section--map" id="contact">
         <div class="map">
         <img class="map__img" src="images/map/map_img.jpg" alt="">
         <div class="map__text">Open Map</div>
@@ -620,7 +620,7 @@
     </section>
 
 <!--Footer Contact-->
-    <footer class="footer" id="contact">
+    <footer class="footer">
         <div class="container container--last">
             <div class="footer__inner">
 
